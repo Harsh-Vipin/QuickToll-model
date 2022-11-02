@@ -3,8 +3,8 @@
 # 1. Library imports
 import uvicorn
 from fastapi import FastAPI,UploadFile,File
+import model
 import shutil
-from model import *
 
 # 2. Create the app object
 app = FastAPI()
@@ -21,12 +21,9 @@ def index():
 async def create_upload_file(file: UploadFile=File(...)):
     with open("img.jpg","wb") as buffer:
         shutil.copyfileobj(file.file,buffer)
-    res=predict(file.filename)
-    print(res)
-    if len(res)==0:
-        return "reg no"
-    else:
-        return "reg no"
+    res=model.predict("img.jpg")
+    return{"filename":res}
+    
 
 
 

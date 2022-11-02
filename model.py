@@ -33,8 +33,6 @@ def predict(name):
     return text
 
 
-
-
 # import pickle
 # pickle_out = open("model.pkl","wb")
 # pickle.dump(model, pickle_out)

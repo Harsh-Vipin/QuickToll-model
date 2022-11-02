@@ -1,0 +1,9 @@
+easyocr
+matplotlib
+numpy
+imutils
+fastapi
+uvicorn
+gunicorn==19.0.0
+uvloop
+httptools
